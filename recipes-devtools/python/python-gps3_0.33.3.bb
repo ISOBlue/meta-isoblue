@@ -11,8 +11,8 @@ HOMEPAGE = "https://github.com/wadda/gps3"
 SUMMARY = "Python 2.7-3.5 clients for gpsd"
 
 SRC_URI = "https://github.com/wadda/gps3/archive/master.zip"
-SRC_URI[md5sum] = "f6627f60d2259c6d1510df90617b91dc"
-SRC_URI[sha256sum] = "e429708cb0dc6636dac46b38cffbe0063e0cfb5712f49f37f06a88f83ad3177f"
+SRC_URI[md5sum] = "b95e33546ddc3e96e407d47a953d57b0"
+SRC_URI[sha256sum] = "0da1c224a9fe5e62afe0bdc27073dfaf9c168920847062905b35104d0fbd65ad"
 
 S = "${WORKDIR}/gps3-master"
 

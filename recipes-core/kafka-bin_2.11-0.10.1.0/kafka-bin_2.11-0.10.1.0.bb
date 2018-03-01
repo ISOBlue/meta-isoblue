@@ -3,7 +3,7 @@ LICENSE = "Apache"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e2f7bdde53eb25ce23d8153f3f207ad9"
 
 SRC_URI += " \
-		http://mirror.nexcess.net/apache/kafka/0.10.1.0/kafka_${PV}.tgz \
+		http://archive.apache.org/dist/kafka/0.10.1.0/kafka_${PV}.tgz \
 		file://isoblueProducer.properties \
 		file://server.properties \
 		file://zookeeper.properties \
