@@ -10,7 +10,7 @@ LIC_FILES_CHKSUM = "file://src/avro/LICENSE;md5=b1e01b26bacfc2232046c90a330332b3
 HOMEPAGE = "http://avro.apache.org/"
 SUMMARY = "Avro is a serialization and RPC framework."
 
-SRC_URI = "http://apache.mirrors.lucidnetworks.net/avro/avro-${PV}/py/avro-${PV}.tar.gz"
+SRC_URI = "http://archive.apache.org/dist/avro/avro-${PV}/py/avro-${PV}.tar.gz"
 SRC_URI[md5sum] = "44456d2c47d44d854e2ac5a9d9d9253c"
 SRC_URI[sha256sum] = "46f34322657281ae717b95c0d712bffa0736f1fa82642ddd7ccf9c3bec635508"
 
