@@ -12,7 +12,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.regexp;md5=8abca43e8b4acec9664239c3fb93a850 \
                     file://packaging/debian/copyright;md5=1660a01c03043fa66e49e388177b479c"
 
 SRC_URI = " \
-    https://github.com/edenhill/librdkafka/archive/v${PV}.tar.gz \
+    https://github.com/edenhill/librdkafka/archive/v${PV}.tar.gz;downloadfilename=v${PV}.tar.gz \
     file://0001-Remove-cpp-compilation-from-Makefile.patch;patch=1 \
 "
 SRC_URI[md5sum] = "45bc9713bd4ed948e1efbd62688fc502"
