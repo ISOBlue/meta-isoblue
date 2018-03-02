@@ -3,7 +3,7 @@ HOMEPAGE = "http://https://github.com/OATS-Group/isoblue2/"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "https://github.com/OATS-Group/isoblue2/archive/isoblue-software_${PV}.tar.gz"
+SRC_URI = "https://github.com/OATS-Group/isoblue2/archive/isoblue-software_${PV}.tar.gz;downloadfilename=isoblue-software_${PV}.tar.gz"
 SRC_URI[md5sum] = "1aeab374c3532654c3eab7b9ecbce024"
 SRC_URI[sha256sum] = "b0396fc0f78b6c4c77238589ca4c28816d5910014191a0a1d89a31f8eea832f5"
 DEPENDS = "librdkafka avro-c libpthread-stubs"
