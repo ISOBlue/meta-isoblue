@@ -2,7 +2,7 @@
 Description=Kafka Tunnel for cloudradio39.ecn.purdue.edu
 
 [Service]
-ExecStart=/usr/bin/ssh -NL localhost:BROKERPORT:cloudradio39.ecn.purdue.edu:9092 -L localhost:ZKPORT:cloudradio39.ecn.purdue.edu:2181 ubuntu@cloudradio39.ecn.purdue.edu
+ExecStart=/usr/bin/ssh -NL localhost:BROKERPORT:cloudradio39.ecn.purdue.edu:9092 -L localhost:ZKPORT:cloudradio39.ecn.purdue.edu:2181 yang@cloudradio39.ecn.purdue.edu
 Restart=always
 RestartSec=5
 
