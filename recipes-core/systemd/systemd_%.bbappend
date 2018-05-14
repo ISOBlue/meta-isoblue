@@ -19,7 +19,7 @@ SRC_URI += " \
     file://net-strength.service \
     file://ssh-forward.service \
     file://topic.service \
-    file://tunnel@.service \
+    file://tunnel.service \
     file://zookeeper.service \
 "
 
@@ -52,14 +52,14 @@ do_install_append() {
 	install -m 0644 ${WORKDIR}/gps-log@.service ${D}${systemd_system_unitdir}/gps-log@gps.service
 	install -m 0644 ${WORKDIR}/gps-log@.service ${D}${systemd_system_unitdir}/gps-log@remote.service
 
-    # use custom ports from isoblue2.conf
+  # use custom ports from isoblue2.conf
 	install -m 0644 ${WORKDIR}/ssh-forward.service ${D}${systemd_system_unitdir}/ssh-forward.service
-    sed -i "s/SSHPORT/${SSHPORT}/" ${D}${systemd_system_unitdir}/ssh-forward.service
+  sed -i "s/SSHPORT/${SSHPORT}/" ${D}${systemd_system_unitdir}/ssh-forward.service
 
-    # use custom ports from isoblue2.conf
-	install -m 0644 ${WORKDIR}/tunnel@.service ${D}${systemd_system_unitdir}/tunnel@52.54.160.103.service
-    sed -i "s/BROKERPORT/${BROKERPORT}/" ${D}${systemd_system_unitdir}/tunnel@52.54.160.103.service
-    sed -i "s/ZKPORT/${ZKPORT}/" ${D}${systemd_system_unitdir}/tunnel@52.54.160.103.service
+  # use custom ports from isoblue2.conf
+	install -m 0644 ${WORKDIR}/tunnel.service ${D}${systemd_system_unitdir}/tunnel.service
+  sed -i "s/BROKERPORT/${BROKERPORT}/" ${D}${systemd_system_unitdir}/tunnel.service
+  sed -i "s/ZKPORT/${ZKPORT}/" ${D}${systemd_system_unitdir}/tunnel.service
 
     # make symlinks
     ln -sf ${systemd_system_unitdir}/zookeeper.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/zookeeper.service
@@ -70,7 +70,7 @@ do_install_append() {
     ln -sf ${systemd_system_unitdir}/gps-log-watchdog.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gps-log-watchdog.service
     ln -sf ${systemd_system_unitdir}/ssh-forward.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/ssh-forward.service
     ln -sf ${systemd_system_unitdir}/ssh-forward.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/ssh-forward.service
-    ln -sf ${systemd_system_unitdir}/tunnel@52.54.160.103.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/tunnel@52.54.160.103.service
+    ln -sf ${systemd_system_unitdir}/tunnel.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/tunnel.service
     ln -sf ${systemd_system_unitdir}/gpsd.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gpsd.service
 }
 
@@ -94,7 +94,7 @@ FILES_${PN} += " \
 	${systemd_system_unitdir}/net-strength.service \
 	${systemd_system_unitdir}/ssh-forward.service \
 	${systemd_system_unitdir}/topic.service \
-	${systemd_system_unitdir}/tunnel@52.54.160.103.service \
+	${systemd_system_unitdir}/tunnel.service \
 	${systemd_system_unitdir}/zookeeper.service \
 "
 
@@ -107,7 +107,7 @@ SYSTEMD_SERVICE_${PN} = " \
 	gps-log@remote.service \
 	gps-log@gps.service \
 	ssh-forward.service \
-	tunnel@52.54.160.103.service \
+	tunnel.service \
 "
 
 SYSTEMD_AUTO_ENABLE = "enable"
