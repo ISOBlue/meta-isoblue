@@ -2,6 +2,7 @@ SUMMARY = "Miscellaneous files for ISOBlue2"
 HOMEPAGE = "http://https://github.com/OATS-Group/isoblue2/"
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
+RDEPENDS_${PN} += "bash"
 
 SRC_URI = " \
     file://pgns \

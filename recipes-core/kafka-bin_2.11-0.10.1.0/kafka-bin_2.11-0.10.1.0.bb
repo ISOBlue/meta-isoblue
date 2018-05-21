@@ -1,6 +1,7 @@
 SUMMARY = "Apache Kafka Binaries for ISOBlue2"
 LICENSE = "Apache"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e2f7bdde53eb25ce23d8153f3f207ad9"
+RDEPENDS_${PN} += "bash"
 
 SRC_URI += " \
 		http://archive.apache.org/dist/kafka/0.10.1.0/kafka_${PV}.tgz \
