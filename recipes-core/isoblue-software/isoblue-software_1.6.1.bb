@@ -4,8 +4,8 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=9510a4f737974c229a56e1db9b0142e6"
 
 SRC_URI = "https://github.com/ISOBlue/isoblue2/archive/isoblue-software_${PV}.tar.gz;downloadfilename=isoblue-software_${PV}.tar.gz"
-SRC_URI[md5sum] = "7704bf8357cc906ce36dec4acbd1e373"
-SRC_URI[sha256sum] = "0c7eb15e5dcd4ab5712ab2c11060a383a589afff243532385d30968a89593078"
+SRC_URI[md5sum] = "f34429a0251d9cc55da2fa3c2e22d84a"
+SRC_URI[sha256sum] = "4bd14a2d94d1c3d4023db52463aacdac82279fd627ef0cd6de04a8321444fc81"
 DEPENDS = "librdkafka avro-c libpthread-stubs"
 
 S = "${WORKDIR}/isoblue2-isoblue-software_${PV}/software/producer"
