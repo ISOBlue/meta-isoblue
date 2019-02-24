@@ -16,7 +16,6 @@ SRC_URI += " \
     file://gps-log-watchdog.service \
     file://heartbeat.service \
     file://mirror.service \
-    file://net-strength.service \
     file://ssh-forward.service \
     file://topic.service \
     file://tunnel.service \
@@ -40,7 +39,6 @@ do_install_append() {
 	install -m 0644 ${WORKDIR}/gps-log-watchdog.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/heartbeat.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/mirror.service ${D}${systemd_system_unitdir}/
-	install -m 0644 ${WORKDIR}/net-strength.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/get-pgns.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/get-presence.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/zookeeper.service ${D}${systemd_system_unitdir}/
@@ -91,7 +89,6 @@ FILES_${PN} += " \
 	${systemd_system_unitdir}/gps-log-watchdog.service \
 	${systemd_system_unitdir}/heartbeat.service \
 	${systemd_system_unitdir}/mirror.service \
-	${systemd_system_unitdir}/net-strength.service \
 	${systemd_system_unitdir}/ssh-forward.service \
 	${systemd_system_unitdir}/topic.service \
 	${systemd_system_unitdir}/tunnel.service \
