@@ -68,6 +68,7 @@ do_install_append() {
     ln -sf ${systemd_system_unitdir}/get-log@remote.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gps-log@remote.service
     ln -sf ${systemd_system_unitdir}/gps-log@gps.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gps-log@gps.service
     ln -sf ${systemd_system_unitdir}/gps-log-watchdog.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gps-log-watchdog.service
+    ln -sf ${systemd_system_unitdir}/kafka-log-monitor.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/kafka-log-monitor.service
     ln -sf ${systemd_system_unitdir}/ssh-forward.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/ssh-forward.service
     ln -sf ${systemd_system_unitdir}/ssh-forward.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/ssh-forward.service
     ln -sf ${systemd_system_unitdir}/tunnel.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/tunnel.service
@@ -106,6 +107,7 @@ SYSTEMD_SERVICE_${PN} = " \
 	get-presence.service \
 	gps-log@remote.service \
 	gps-log@gps.service \
+   kafka-log-monitor.service \
 	ssh-forward.service \
 	tunnel.service \
 "
