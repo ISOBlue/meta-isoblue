@@ -1,0 +1,12 @@
+[Unit]
+Description=Kafka Log Monitor
+Documentation=http://www.isoblue.org/
+Requires=broker.service zookeeper.service
+After=broker.service
+ConditionPathExists=/opt/bin
+
+[Service]
+Type=simple
+ExecStart=/opt/bin/kafka_log_monitor.py
+Restart=on-failure
+RestartSec=1
