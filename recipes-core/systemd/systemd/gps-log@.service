@@ -5,9 +5,9 @@ After=gpsd.service zookeeper.service broker.service mirror.service
 
 [Service]
 Type=simple
-ExecStart=/opt/bin/kafka_gps_log.py -t %i 
+ExecStart=/opt/bin/kafka_gps_log.py -t %i
 Restart=on-failure
-RestartSec=2
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
