@@ -12,6 +12,7 @@ SRC_URI += " \
     file://can-watchdog.service \
     file://get-pgns.service \
     file://get-presence.service \
+    file://reconnect-cell.service \
     file://gps-log@.service \
     file://gps-log-watchdog.service \
     file://kafka-log-monitor.service \
@@ -43,6 +44,7 @@ do_install_append() {
 	install -m 0644 ${WORKDIR}/mirror.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/get-pgns.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/get-presence.service ${D}${systemd_system_unitdir}/
+	install -m 0644 ${WORKDIR}/reconnect-cell.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/zookeeper.service ${D}${systemd_system_unitdir}/
 
 	# install custom services
@@ -65,6 +67,7 @@ do_install_append() {
     ln -sf ${systemd_system_unitdir}/zookeeper.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/zookeeper.service
     ln -sf ${systemd_system_unitdir}/get-pgns.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/get-pgns.service
     ln -sf ${systemd_system_unitdir}/get-presence.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/get-presence.service
+    ln -sf ${systemd_system_unitdir}/reconnect-cell.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/reconnect-cell.service
     ln -sf ${systemd_system_unitdir}/get-log@remote.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gps-log@remote.service
     ln -sf ${systemd_system_unitdir}/gps-log@gps.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gps-log@gps.service
     ln -sf ${systemd_system_unitdir}/gps-log-watchdog.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gps-log-watchdog.service
@@ -87,6 +90,7 @@ FILES_${PN} += " \
 	${systemd_system_unitdir}/can-watchdog.service \
 	${systemd_system_unitdir}/get-pgns.service \
 	${systemd_system_unitdir}/get-presence.service \
+	${systemd_system_unitdir}/reconnect-cell.service \
 	${systemd_system_unitdir}/gps-log@gps.service \
 	${systemd_system_unitdir}/gps-log@remote.service \
 	${systemd_system_unitdir}/gps-log-watchdog.service \
@@ -105,6 +109,7 @@ SYSTEMD_SERVICE_${PN} = " \
 	zookeeper.service \
 	get-pgns.service \
 	get-presence.service \
+	reconnect-cell.service \
 	gps-log@remote.service \
 	gps-log@gps.service \
    kafka-log-monitor.service \

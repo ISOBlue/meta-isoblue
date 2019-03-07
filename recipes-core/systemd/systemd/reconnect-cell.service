@@ -1,0 +1,14 @@
+[Unit]
+Description=Cellular Reconnection Trigger
+Documentation=http://isoblue.org
+Requires=network.target remote-fs.target
+Before=shutdown.target sleep.target
+After=network.target remote-fs.target get-pgns.service
+
+[Service]
+Type=simple
+ExecStart=/opt/bin/reconnect_cell.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
