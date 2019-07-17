@@ -39,6 +39,7 @@ do_install () {
 	install -m 0755 ${WORKDIR}/isoblue2-isoblue-software_${PV}/misc/reconnect_cell.sh ${D}/opt/bin/
 
   # install the sleep hook script
+  install -d ${D}/lib/systemd/system-sleep
 	install -m 0755 ${WORKDIR}/isoblue2-isoblue-software_${PV}/misc/sleep_hook.sh ${D}/lib/systemd/system-sleep/
 
   # install the schema directory
