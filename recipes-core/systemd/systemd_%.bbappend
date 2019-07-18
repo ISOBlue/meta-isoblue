@@ -22,6 +22,7 @@ SRC_URI += " \
     file://topic.service \
     file://tunnel.service \
     file://zookeeper.service \
+    file://ub-rtsp-start@.service \
 "
 
 do_install_append() {
@@ -46,6 +47,7 @@ do_install_append() {
 	install -m 0644 ${WORKDIR}/get-presence.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/reconnect-cell.service ${D}${systemd_system_unitdir}/
 	install -m 0644 ${WORKDIR}/zookeeper.service ${D}${systemd_system_unitdir}/
+	install -m 0644 ${WORKDIR}/ub-rtsp-start@.service ${D}${systemd_system_unitdir}/
 
 	# install custom services
 	# the can_up@.service is taken care of by udev
@@ -72,7 +74,6 @@ do_install_append() {
   ln -sf ${systemd_system_unitdir}/gps-log@gps.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gps-log@gps.service
   ln -sf ${systemd_system_unitdir}/gps-log-watchdog.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gps-log-watchdog.service
   ln -sf ${systemd_system_unitdir}/kafka-log-monitor.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/kafka-log-monitor.service
-  ln -sf ${systemd_system_unitdir}/ssh-forward.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/ssh-forward.service
   ln -sf ${systemd_system_unitdir}/ssh-forward.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/ssh-forward.service
   ln -sf ${systemd_system_unitdir}/tunnel.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/tunnel.service
   ln -sf ${systemd_system_unitdir}/gpsd.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/gpsd.service
@@ -101,6 +102,7 @@ FILES_${PN} += " \
 	${systemd_system_unitdir}/topic.service \
 	${systemd_system_unitdir}/tunnel.service \
 	${systemd_system_unitdir}/zookeeper.service \
+	${systemd_system_unitdir}/ub-rtsp-start@.service \
 "
 
 # Let's not enable the can-watchdog.service by default
