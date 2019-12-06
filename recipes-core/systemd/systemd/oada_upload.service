@@ -1,14 +1,14 @@
 [Unit]
-Description=Kafka Log Monitor
+Description=OADA Upload
 Documentation=http://www.isoblue.org/
-After=zookeeper.service broker.service mirror.service
+After=heartbeat.service gps_log.service
 ConditionPathExists=/opt/bin
 
 [Service]
 Type=simple
-ExecStart=/opt/bin/kafka_log_monitor.py
+ExecStart=/bin/bash -c '/opt/bin/oada_upload.py'
 Restart=on-failure
-RestartSec=10
+RestartSec=2
 
 [Install]
 WantedBy=multi-user.target
