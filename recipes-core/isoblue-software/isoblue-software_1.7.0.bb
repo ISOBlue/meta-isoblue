@@ -3,10 +3,10 @@ HOMEPAGE = "http://https://github.com/ISOBlue/isoblue2/"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=9510a4f737974c229a56e1db9b0142e6"
 
-SRC_URI = "https://github.com/ISOBlue/isoblue2/archive/oada_upload.zip;downloadfilename=isoblue-software_${PV}.zip"
+SRC_URI = "https://github.com/ISOBlue/isoblue2/archive/oada-direct.zip;downloadfilename=isoblue-software_${PV}.zip"
 SRC_URI[md5sum] = "770aca58a32f1cfbe33df1bd4a5a4cf4"
 SRC_URI[sha256sum] = "28e6b174105b572e26d9dd06ca702050ab7bd2deb07fba0a8c1b6bd478825f41"
-DEPENDS = "libpthread-stubs sqlite3 nodejs"
+DEPENDS = "libpthread-stubs sqlite3"
 
 S = "${WORKDIR}/isoblue2-isoblue-software_${PV}/software/producer"
 
@@ -50,5 +50,5 @@ FILES_${PN} += " \
 	/opt/bin/get_presence.sh \
 	/lib/systemd/system-sleep/sleep_hook.sh \
 	/opt/bin/reconnect_cell.sh \
-	/opt/isoblue.cfg
+	/opt/isoblue.cfg \
 "
