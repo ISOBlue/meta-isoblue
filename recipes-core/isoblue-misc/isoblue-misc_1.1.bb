@@ -7,7 +7,6 @@ RDEPENDS_${PN} += "bash"
 SRC_URI = " \
     file://pgns \
     file://id \
-    file://chrony.conf \
 "
 
 do_install () {
@@ -21,11 +20,9 @@ do_install () {
     # install the files
     install -m 0644 ${WORKDIR}/id ${D}/opt/id
     install -m 0644 ${WORKDIR}/pgns ${D}/opt/pgns
-    install -m 0644 ${WORKDIR}/chrony.conf ${D}/etc/chrony.conf
 }
 
 FILES_${PN} += " \
     /opt/id \
     /opt/pgns \
-    /etc/chrony.conf \
 "
