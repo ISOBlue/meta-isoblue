@@ -36,7 +36,6 @@ do_install () {
 	install -m 0755 ${WORKDIR}/isoblue2-isoblue-software_${PV}/misc/get_pgns.sh ${D}/opt/bin/
 	install -m 0755 ${WORKDIR}/isoblue2-isoblue-software_${PV}/misc/get_presence.sh ${D}/opt/bin/
 	install -m 0755 ${WORKDIR}/isoblue2-isoblue-software_${PV}/misc/gps_log_watchdog.sh ${D}/opt/bin/
-	install -m 0755 ${WORKDIR}/isoblue2-isoblue-software_${PV}/misc/reconnect_cell.sh ${D}/opt/bin/
 
   # install the sleep hook script
   install -d ${D}/lib/systemd/system-sleep
@@ -56,7 +55,6 @@ FILES_${PN} += " \
 	/opt/bin/get_presence.sh \
 	/opt/bin/gps_log_watchdog.sh \
 	/lib/systemd/system-sleep/sleep_hook.sh \
-	/opt/bin/reconnect_cell.sh \
 	/opt/bin/kafka_gps_log.py \
 	/opt/bin/kafka_log_monitor.py \
 	/opt/schema/*.avsc \
