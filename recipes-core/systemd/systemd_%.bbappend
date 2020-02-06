@@ -48,11 +48,6 @@ do_install_append() {
 	install -m 0644 ${WORKDIR}/ssh-forward.service ${D}${systemd_system_unitdir}/ssh-forward.service
   sed -i "s/SSHPORT/${SSHPORT}/" ${D}${systemd_system_unitdir}/ssh-forward.service
 
-  # use custom ports from isoblue2.conf
-	install -m 0644 ${WORKDIR}/tunnel.service ${D}${systemd_system_unitdir}/tunnel.service
-  sed -i "s/BROKERPORT/${BROKERPORT}/" ${D}${systemd_system_unitdir}/tunnel.service
-  sed -i "s/ZKPORT/${ZKPORT}/" ${D}${systemd_system_unitdir}/tunnel.service
-
   # make symlinks
   ln -sf ${systemd_system_unitdir}/zookeeper.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/zookeeper.service
   ln -sf ${systemd_system_unitdir}/get-pgns.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/get-pgns.service
